@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gourugolla Rohith | Senior Power BI Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f172a;color:#e5e7eb;line-height:1.6}
+header{padding:80px 10%;background:linear-gradient(135deg,#111827,#1e3a8a)}
+h1{font-size:48px}.accent{color:#60a5fa}
+section{padding:60px 10%}
+.card{background:#1e293b;padding:20px;border-radius:12px;margin:15px 0}
+.skills .bar{height:10px;background:#334155;border-radius:10px;overflow:hidden}
+.fill{height:100%;background:#3b82f6;width:0;animation:grow 2s forwards}
+@keyframes grow{to{width:var(--w)}}
+a.btn{display:inline-block;padding:12px 24px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px;margin-top:20px}
+footer{text-align:center;padding:30px;background:#111827}
+.project-card{
+    display:flex;
+    gap:30px;
+    background:#1e293b;
+    border-radius:16px;
+    overflow:hidden;
+    margin:40px 0;
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-image{
+    width:420px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:30px;
+}
+
+.project-content h3{
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.project-content p{
+    text-align:justify;
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.tech-stack span{
+    background:#2563eb;
+    color:white;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+@media(max-width:900px){
+.project-card{
+    flex-direction:column;
+}
+
+.project-image{
+    width:100%;
+    height:250px;
+}
+}
+#skills{
+    padding:80px 8%;
+}
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.skill-category{
+    background:#1b263b;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.skill-category:hover{
+    transform:translateY(-8px);
+}
+
+.skill-category h3{
+    color:#60a5fa;
+    margin-bottom:25px;
+}
+
+.skill{
+    margin-bottom:18px;
+}
+
+.skill span{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+    border-radius:20px;
+    animation:growSkill 2s ease forwards;
+}
+
+@keyframes growSkill{
+    from{
+        width:0;
+    }
+}
+/* ===========================
+   CERTIFICATIONS
+=========================== */
+
+#certifications{
+    padding:90px 8%;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#94a3b8;
+    max-width:850px;
+    margin:20px auto 50px;
+    line-height:1.8;
+}
+
+.certification-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
+    gap:30px;
+
+}
+
+.certificate-card{
+
+    background:#1b263b;
+    border-radius:18px;
+    padding:35px;
+    border-left:5px solid #2563eb;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-8px);
+
+    border-left:5px solid #38bdf8;
+
+}
+
+.certificate-body h3{
+
+    color:#60a5fa;
+    margin-bottom:18px;
+    line-height:1.5;
+
+}
+
+.certificate-body p{
+
+    color:#d1d5db;
+    text-align:justify;
+    line-height:1.8;
+    margin-bottom:25px;
+
+}
+
+.certificate-footer{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.issuer{
+
+    color:#94a3b8;
+    font-weight:600;
+
+}
+
+.certificate-btn{
+
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:8px;
+    transition:.3s;
+
+}
+
+.certificate-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+@media(max-width:768px){
+
+.certification-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.certificate-footer{
+
+flex-direction:column;
+gap:15px;
+
+}
+
+}
+/* ===========================
+   EDUCATION
+=========================== */
+
+#education{
+
+    padding:90px 8%;
+
+}
+
+.education-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:30px;
+
+    background:#1b263b;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    border-left:5px solid #2563eb;
+
+    transition:.3s;
+
+}
+
+.education-card:hover{
+
+    transform:translateY(-8px);
+
+    border-left:5px solid #38bdf8;
+
+}
+
+.education-icon{
+
+    width:80px;
+
+    height:80px;
+
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    color:white;
+
+    flex-shrink:0;
+
+}
+
+.education-content h3{
+
+    color:#60a5fa;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.education-content h4{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.college{
+
+    color:#94a3b8;
+
+    font-size:17px;
+
+    margin-bottom:20px;
+
+}
+
+.education-details{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    color:#cbd5e1;
+
+}
+
+.education-description{
+
+    color:#d1d5db;
+
+    text-align:justify;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:768px){
+
+.education-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.education-details{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.education-icon{
+
+margin:auto;
+
+}
+
+}
+/* ===========================
+   CONTACT
+=========================== */
+
+#contact{
+    padding:90px 8%;
+}
+
+.contact-container{
+
+    max-width:800px;
+    margin:50px auto 0;
+
+}
+
+.contact-info{
+
+    background:#1b263b;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    border-left:5px solid #2563eb;
+
+}
+
+.contact-item{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin:30px 0;
+
+}
+
+.contact-item i{
+
+    width:55px;
+    height:55px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+    color:white;
+
+    font-size:22px;
+
+}
+
+.contact-item span{
+
+    display:block;
+    color:#60a5fa;
+    font-weight:600;
+    margin-bottom:6px;
+
+}
+
+.contact-item a{
+
+    color:#e2e8f0;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.contact-item a:hover{
+
+    color:#38bdf8;
+
+}
+
+.contact-item p{
+
+    color:#d1d5db;
+
+}
+
+@media(max-width:768px){
+
+.contact-info{
+
+padding:30px;
+
+}
+
+.contact-item{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+}
+/* ===========================
+   EXPERIENCE
+=========================== */
+
+#experience{
+    padding:90px 8%;
+}
+
+.experience-card{
+
+    background:#1b263b;
+    border-radius:18px;
+    padding:35px;
+
+    border-left:5px solid #2563eb;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-8px);
+
+    border-left:5px solid #38bdf8;
+
+}
+
+.experience-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.experience-header h3{
+
+    color:#60a5fa;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.experience-header h4{
+
+    color:#e2e8f0;
+
+    font-size:20px;
+
+    font-weight:500;
+
+}
+
+.experience-duration{
+
+    text-align:right;
+
+}
+
+.experience-duration span{
+
+    display:block;
+
+    font-weight:600;
+
+    color:#38bdf8;
+
+    font-size:17px;
+
+}
+
+.experience-duration small{
+
+    color:#94a3b8;
+
+}
+
+.experience-body ul{
+
+    padding-left:20px;
+
+}
+
+.experience-body li{
+
+    margin-bottom:18px;
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+    text-align:justify;
+
+}
+
+.experience-body li::marker{
+
+    color:#38bdf8;
+
+}
+
+@media(max-width:768px){
+
+.experience-header{
+
+flex-direction:column;
+
+}
+
+.experience-duration{
+
+text-align:left;
+margin-top:15px;
+
+}
+
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Gourugolla <span class="accent">Rohith</span></h1>
+<h2>Senior Power BI Developer | Cognizant</h2>
+<p>4.9+ Years of experience building enterprise BI solutions using Power BI, DAX, Microsoft Fabric, Power Query, SSMS, Tabular Editor and Power Automate.</p>
+<a class="btn" href="resume.pdf" download>Download Resume</a>
+</header>
+
+<section>
+<h2>About Me</h2>
+<div class="card">
+
+I am a Senior Power BI Developer with 4.9+ years of experience in designing and delivering enterprise Business Intelligence solutions that transform data into meaningful business insights. 
+At Cognizant, I have developed interactive dashboards, optimized data models, and automated reporting processes using Power BI, DAX, Power Query, Microsoft Fabric, SQL, SSMS, Tabular Editor, and Power Automate. 
+My expertise includes data modeling, performance optimization, Row-Level Security (RLS), and creating scalable reporting solutions for business stakeholders. As a Microsoft Certified PL-300 and DP-600 (Fabric Analytics Engineer Associate) professional, I am passionate about building high-quality analytics solutions that improve decision-making, enhance operational efficiency, and deliver measurable business value through data-driven innovation.
+</div>
+</section>
+<!-- ===========================
+     EXPERIENCE
+=========================== -->
+
+<section id="experience">
+
+    <h2 class="section-title">Professional Experience</h2>
+
+    <p class="section-subtitle">
+        Nearly five years of experience in designing and delivering enterprise Business Intelligence solutions,
+        specializing in Power BI, Microsoft Fabric, SQL, DAX, and data visualization.
+    </p>
+
+    <div class="experience-card">
+
+        <div class="experience-header">
+
+            <div>
+                <h3>Senior Power BI Developer (Associate)</h3>
+                <h4>Cognizant Technology Solutions</h4>
+            </div>
+
+            <div class="experience-duration">
+                <span>Oct 2021 – Present</span>
+                <small>Bangalore, India</small>
+            </div>
+
+        </div>
+
+        <div class="experience-body">
+
+            <ul>
+
+                <li>
+                    Designed, developed, tested, and deployed enterprise Power BI dashboards and reports to support business intelligence and executive decision-making.
+                </li>
+
+                <li>
+                    Built scalable semantic data models, optimized DAX measures, KPIs, and Power Query transformations to deliver high-performance analytical reporting.
+                </li>
+
+                <li>
+                    Performed SQL-based unit testing, data validation, troubleshooting, and report performance optimization to ensure data accuracy and reliability.
+                </li>
+
+                <li>
+                    Managed Power BI Service workspaces, deployment pipelines, scheduled refreshes, security, and stakeholder reporting requirements.
+                </li>
+
+                <li>
+                    Collaborated with business stakeholders, SMEs, and cross-functional teams to gather requirements and translate business needs into scalable BI solutions.
+                </li>
+
+                <li>
+                    Automated reporting workflows using Power Automate, significantly reducing manual effort and improving operational efficiency.
+                </li>
+
+                <li>
+                    Worked in Agile/Scrum environments, participating in sprint planning, backlog refinement, daily stand-ups, and sprint reviews.
+                </li>
+
+                <li>
+                    Conducted Knowledge Transfer (KT) sessions, mentored junior developers, and promoted best practices for Power BI development and data modeling.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-card">
+
+        <img src="images/gen-ai-dashboard.jpg"
+             alt="Gen AI Dashboard"
+             class="project-image">
+
+        <div class="project-content">
+
+            <h3>Gen AI Dashboard</h3>
+
+            <p>
+                The Gen AI Dashboard was developed to monitor and analyze the AI
+                upskilling journey of Cognizant associates, providing a centralized
+                view of learning progress from beginner to AI Builder levels.
+                The dashboard enables stakeholders to track certification completion
+                across multiple learning paths using interactive KPIs, matrices,
+                and visualizations. Optimized semantic models and efficient DAX
+                calculations reduced dashboard load times to under 10 seconds while
+                ensuring scalable reporting and reusable datasets. The solution
+                empowered leadership with real-time insights into employee learning
+                progress and organizational AI adoption, improving decision-making
+                and reporting efficiency.
+            </p>
+
+            <div class="tech-stack">
+                <span>Power BI</span>
+                <span>DAX</span>
+                <span>Power Query</span>
+                <span>Postgre SQL</span>
+                <span>Semantic Models</span>
+                <span>Performance Optimization</span>
+                <span>Microsoft Subscriptions for Refresh status, Dashboard summary</span>
+                <span>Refresh Automation</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="project-card">
+
+        <img src="images/aladin-dashboard.jpg"
+             alt="ALADIN Dashboard"
+             class="project-image">
+
+        <div class="project-content">
+
+            <h3>ALADIN Dashboard</h3>
+
+            <p>
+                The ALADIN Dashboard is an enterprise reporting solution designed
+                to monitor learning progress, certification status, and license
+                utilization for Cognizant associates up to the Director level.
+                The project consolidated five individual Power BI reports into
+                a single interactive solution with Row-Level Security (RLS),
+                improving usability and governance. Automated data transformation,
+                report refreshes, and Microsoft subscriptions significantly reduced
+                manual reporting efforts, saving approximately 1,350 hours annually
+                while providing business stakeholders with accurate, real-time
+                operational insights.
+            </p>
+
+            <div class="tech-stack">
+                <span>Power BI</span>
+                <span>DAX</span>
+                <span>Power Query</span>
+                <span>Postgre SQL</span>
+                <span>SQL Server</span>
+                <span>SSMS</span>
+                <span>Power Automate</span>
+                <span>RLS</span>
+                <span>Microsoft Subscriptions</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-container">
+
+        <!-- BI -->
+        <div class="skill-category">
+            <h3>📊 BI & Visualization</h3>
+
+            <div class="skill">
+                <span>Power BI Desktop</span>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Power BI Service</span>
+                <div class="progress"><div class="progress-bar" style="width:92%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Tableau</span>
+                <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Tabular Editor</span>
+                <div class="progress"><div class="progress-bar" style="width:88%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Data Modeling -->
+        <div class="skill-category">
+
+            <h3>🗄 Data Modelling</h3>
+
+            <div class="skill">
+                <span>Star Schema</span>
+                <div class="progress"><div class="progress-bar" style="width:92%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Snowflake Schema</span>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Semantic Models</span>
+                <div class="progress"><div class="progress-bar" style="width:94%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Dataset Optimization</span>
+                <div class="progress"><div class="progress-bar" style="width:91%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Languages -->
+        <div class="skill-category">
+
+            <h3>💻 Languages & Tools</h3>
+
+            <div class="skill">
+                <span>SQL</span>
+                <div class="progress"><div class="progress-bar" style="width:92%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>DAX</span>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Power Query (M)</span>
+                <div class="progress"><div class="progress-bar" style="width:93%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Python</span>
+                <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Jupyter Notebook</span>
+                <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Excel VBA</span>
+                <div class="progress"><div class="progress-bar" style="width:82%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category">
+
+            <h3>🗃 Databases</h3>
+
+            <div class="skill">
+                <span>SQL Server</span>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>PostgreSQL</span>
+                <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- ETL -->
+        <div class="skill-category">
+
+            <h3>⚙ ETL & Automation</h3>
+
+            <div class="skill">
+                <span>Power Query</span>
+                <div class="progress"><div class="progress-bar" style="width:94%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Data Transformation</span>
+                <div class="progress"><div class="progress-bar" style="width:92%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Power Automate</span>
+                <div class="progress"><div class="progress-bar" style="width:88%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Cloud -->
+        <div class="skill-category">
+
+            <h3>☁ Cloud & Platforms</h3>
+
+            <div class="skill">
+                <span>Microsoft Fabric</span>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Analytics -->
+        <div class="skill-category">
+
+            <h3>📈 Analytics</h3>
+
+            <div class="skill">
+                <span>KPI Development</span>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Dashboard Development</span>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>DAX Optimization</span>
+                <div class="progress"><div class="progress-bar" style="width:93%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Data Validation</span>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+
+        </div>
+
+        <!-- Methodologies -->
+        <div class="skill-category">
+
+            <h3>🤝 Methodologies</h3>
+
+            <div class="skill">
+                <span>Agile</span>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Sprint Planning</span>
+                <div class="progress"><div class="progress-bar" style="width:88%"></div></div>
+            </div>
+
+            <div class="skill">
+                <span>Stakeholder Reporting</span>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     CERTIFICATIONS
+============================ -->
+
+<section id="certifications">
+
+    <h2 class="section-title">Professional Certifications</h2>
+
+    <p class="section-subtitle">
+        Microsoft certifications validating my expertise in Business Intelligence,
+        Cloud Computing, Microsoft Fabric, Data Analytics, and Modern Data Engineering.
+    </p>
+
+    <div class="certification-grid">
+
+        <!-- PL-300 -->
+
+        <div class="certificate-card">
+
+            <div class="certificate-body">
+
+                <h3>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</h3>
+
+                <p>
+                    Validates my expertise in designing, developing, and deploying enterprise Power BI solutions. This certification demonstrates proficiency in data preparation, data modeling, DAX, report development, dashboard optimization, security implementation, and delivering business insights through interactive visualizations.
+                </p>
+
+                <div class="certificate-footer">
+
+                    <span class="issuer">Issued by Microsoft</span>
+
+                    <a href="https://gourugollarohith.github.io/Portfolio/Microsoft PL-300 certificate.pdf"
+                       target="_blank"
+                       class="certificate-btn">
+                        View Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- AZ-900 -->
+
+        <div class="certificate-card">
+
+            <div class="certificate-body">
+
+                <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+
+                <p>
+                    Demonstrates foundational knowledge of Microsoft Azure cloud services, cloud concepts, security, governance, pricing, compliance, networking, and Azure architecture. It provides a solid understanding of cloud computing principles and Microsoft's cloud ecosystem.
+                </p>
+
+                <div class="certificate-footer">
+
+                    <span class="issuer">Issued by Microsoft</span>
+
+                    <a href="certificates/Microsoft AZ 900 Certificate.pdf"
+                       target="_blank"
+                       class="certificate-btn">
+                        View Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DP-600 -->
+
+        <div class="certificate-card">
+
+            <div class="certificate-body">
+
+                <h3>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</h3>
+
+                <p>
+                    Validates expertise in implementing enterprise analytics solutions using Microsoft Fabric. Covers Lakehouse architecture, Data Warehousing, Semantic Models, Real-Time Analytics, Data Factory, security, governance, performance optimization, and enterprise-scale analytics solutions.
+                </p>
+
+                <div class="certificate-footer">
+
+                    <span class="issuer">Issued by Microsoft</span>
+
+                    <a href="certificates/Microsoft DP 600 Certificate.pdf"
+                       target="_blank"
+                       class="certificate-btn">
+                        View Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DP-700 -->
+
+        <div class="certificate-card">
+
+            <div class="certificate-body">
+
+                <h3>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</h3>
+
+                <p>
+                    Demonstrates expertise in designing and implementing scalable data engineering solutions using Microsoft Fabric. Covers data ingestion, transformation, orchestration, Lakehouse implementation, pipelines, data security, monitoring, and enterprise data integration.
+                </p>
+
+                <div class="certificate-footer">
+
+                    <span class="issuer">Issued by Microsoft</span>
+
+                    <a href="certificates/Microsoft DP 700 Certificate.pdf"
+                       target="_blank"
+                       class="certificate-btn">
+                        View Certificate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     EDUCATION
+=========================== -->
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-card">
+
+        <div class="education-icon">
+            🎓
+        </div>
+
+        <div class="education-content">
+
+            <h3>Bachelor of Technology (B.Tech)</h3>
+
+            <h4>Electronics & Communication Engineering</h4>
+
+            <p class="college">
+                Chadalawada Ramanamma Engineering College, Tirupati
+            </p>
+
+            <div class="education-details">
+
+                <span>📅 2017 – 2021</span>
+
+                <span>📍 Tirupati, Andhra Pradesh</span>
+
+            </div>
+
+            <p class="education-description">
+                Completed a Bachelor's degree in Electronics and Communication Engineering with a strong foundation in programming, database management, problem-solving, and analytical thinking. Developed technical skills in software development, data analysis, and engineering principles, which later evolved into a successful career in Business Intelligence and Data Analytics using Microsoft technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     CONTACT
+=========================== -->
+
+<section id="contact">
+
+    <h2 class="section-title">Get In Touch</h2>
+
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+                <div>
+
+                    <span>Email</span>
+
+                    <a href="mailto:gourugollarohith24@gmail.com">
+                        gourugollarohith24@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-phone"></i>
+
+                <div>
+
+                    <span>Phone</span>
+
+                    <a href="tel:+919347140077">
+                        +91 9347140077
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fas fa-map-marker-alt"></i>
+
+                <div>
+
+                    <span>Location</span>
+
+                    <p>Bangalore, Karnataka, India</p>
+
+                </div>
+
+            </div>
+
+            <div class="contact-item">
+
+                <i class="fab fa-linkedin"></i>
+
+                <div>
+
+                    <span>LinkedIn</span>
+
+                    <a href="https://www.linkedin.com/in/gourugolla-rohith-512226210"
+                       target="_blank">
+                        View LinkedIn Profile →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>© 2026 Gourugolla Rohith | Senior Power BI Developer</footer>
+</body>
+</html>
