@@ -289,6 +289,28 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;
 
 }
 
+/* ---- Resume viewer (same modal language, PDF instead of image) ---- */
+.resume-frame{
+  width:90vw;max-width:900px;height:88vh;
+  border:none;border-radius:18px;background:#fff;
+  box-shadow:0 25px 70px rgba(0,0,0,.45);
+  animation:certificateZoom .35s ease;
+}
+.resume-download{
+  position:absolute;top:25px;left:35px;
+  display:flex;align-items:center;gap:.5rem;
+  background:var(--rust);color:#FFF7EC;
+  padding:.6rem 1.2rem;border-radius:var(--radius-full);
+  font-size:.85rem;font-weight:600;
+  box-shadow:0 14px 32px rgba(193,82,46,.32);
+  transition:transform .3s var(--ease);
+}
+.resume-download:hover{transform:translateY(-3px);}
+@media(max-width:700px){
+  .resume-download{top:auto;bottom:18px;left:50%;transform:translateX(-50%);}
+  .resume-download:hover{transform:translateX(-50%) translateY(-3px);}
+}
+
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;text-align:center;}
   .hero-photo-wrap{max-width:320px;margin:0 auto;}
@@ -491,12 +513,36 @@ function closeCertificate(){
     document.getElementById("certificateModal").style.display = "none";
 }
 
+const RESUME_URL = "https://raw.githubusercontent.com/gourugollarohith/Portfolio/main/Gourugolla_Rohith_Resume.pdf";
+
+function openResume(){
+    // Raw GitHub PDFs are served with a "force download" header, so they can't
+    // load directly inside an iframe. Google's viewer fetches the file itself
+    // and renders it as a page, which sidesteps that restriction.
+    document.getElementById("resumeFrame").src = "https://docs.google.com/viewer?url=" + encodeURIComponent(RESUME_URL) + "&embedded=true";
+    document.getElementById("resumeModal").style.display = "flex";
+}
+
+function closeResume(){
+    document.getElementById("resumeModal").style.display = "none";
+    document.getElementById("resumeFrame").src = "";
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     const certificateModal = document.getElementById("certificateModal");
     if(certificateModal){
         certificateModal.addEventListener("click", function(e){
             if(e.target === this){
                 closeCertificate();
+            }
+        });
+    }
+
+    const resumeModal = document.getElementById("resumeModal");
+    if(resumeModal){
+        resumeModal.addEventListener("click", function(e){
+            if(e.target === this){
+                closeResume();
             }
         });
     }
@@ -606,9 +652,9 @@ footer.panel{padding:70px 8% 40px;}
           <a href="https://www.linkedin.com/in/gourugolla-rohith-512226210" target="_blank" class="btn btn-outline">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="resume.pdf" download class="btn btn-outline">
+          <button onclick="openResume()" class="btn btn-outline">
             <i class="fas fa-file-arrow-down"></i> Resume
-          </a>
+          </button>
         </div>
       </div>
 
@@ -1059,6 +1105,25 @@ footer.panel{padding:70px 8% 40px;}
          alt="Certificate">
 
 </div>
+
+<!-- ===========================
+     RESUME MODAL
+=========================== -->
+
+<div id="resumeModal" class="certificate-modal">
+
+    <span class="certificate-close" onclick="closeResume()">
+        &times;
+    </span>
+
+    <a class="resume-download" id="resumeDownloadBtn" href="https://raw.githubusercontent.com/gourugollarohith/Portfolio/main/Gourugolla_Rohith_Resume.pdf" download>
+        <i class="fas fa-download"></i> Download
+    </a>
+
+    <iframe id="resumeFrame" class="resume-frame" src="" title="Resume"></iframe>
+
+</div>
+
 
 <!-- =====================================================================
      EDUCATION
